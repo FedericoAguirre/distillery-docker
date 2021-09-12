@@ -99,7 +99,10 @@ docker logs my-todos-running-app
 docker exec -it my-todos-running-app /bin/bash
 ```
 
-## docker volume
+## docker volume - Agregar volumenes de datos para guardar/actualizar nuestros cambios
+```bash
+docker run -dit --name my-todos-running-app -p 8080:80 my-php-todos
+```
 
 ## docker network
 
