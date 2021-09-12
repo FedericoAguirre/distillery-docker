@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - /mnt/c/projects/distillery-docker/todos-app:/var/www/html
+    depends_on:
+      - redis
+  redis:
+    build: ./redis/.
+    ports:
+      - "6379:6379"
