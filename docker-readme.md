@@ -33,8 +33,8 @@ docker pull camunda/camunda-bpm-platform:run-latest
 ```
 
 ```bash
-docker run -d --name camunda1 -p 8080:8080 camunda/camunda-bpm-platform:run-latest
-docker run -d --name camunda2 -p 8081:8082 camunda/camunda-bpm-platform:run-latest
+docker run -d --name camunda1 -p 8081:8080 camunda/camunda-bpm-platform:run-latest
+docker run -d --name camunda2 -p 8082:8080 camunda/camunda-bpm-platform:run-latest
 ```
 
 ## Crear un contenedor customizado - Dockerfile
@@ -42,13 +42,13 @@ docker run -d --name camunda2 -p 8081:8082 camunda/camunda-bpm-platform:run-late
 Crear un archivo docker (**Dockerfile**)
 
 ```
-FROM httpd:2.4.48-alpine
-COPY ./html/ /usr/local/apache2/htdocs/
+FROM php:7.1-apache
+COPY ./todos-app/ /var/www/html/
 ```
 
 [Docker file best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
-[Apache Server](https://hub.docker.com/_/httpd)
+[PHP Server](https://hub.docker.com/_/php)
 
 ## docker build
 
@@ -56,13 +56,13 @@ COPY ./html/ /usr/local/apache2/htdocs/
 -t, --tag list                Name and optionally a tag in the 'name:tag' format
 
 ```bash
-docker build -t todos-app .
+docker build -t my-php-todos .
 ```
 
 ## docker run
 
 ```bash
-docker run -dit --name my-todos-app -p 8080:80 todos-app
+docker run -dit --name my-todos-running-app -p 8080:80 my-php-todos
 ```
 
 ## docker image
@@ -76,7 +76,7 @@ docker image ls -a
 ### Remover imagen
 
 ```bash
-docker image rm 9e8a617d7a30
+docker image rm my-php-todos
 ```
 
 ## docker ps - Mostrar contenedores activos
@@ -88,14 +88,16 @@ docker ps -a
 ```
 
 ## docker logs - Revisar los logs del contenedor
-docker logs my-app
-docker logs 2c7341d6f9e4
+
+```bash
+docker logs my-todos-running-app
+```
 
 ## docker exec - Ejecutar un comando dentro del contenedor
 
-docker exec -it my-app /bin/sh
-
-
+```bash
+docker exec -it my-todos-running-app /bin/bash
+```
 
 ## docker volume
 
