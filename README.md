@@ -100,14 +100,14 @@ docker exec -it my-todos-running-app /bin/bash
 ```
 
 ## docker volume - Agregar volumenes de datos para guardar/actualizar nuestros cambios
-```bash
-docker run -dit --name my-todos-running-app -p 8080:80 my-php-todos
-```
 
-## docker network
+```bash
+docker run -d --name my-todos-running-app -p 8080:80 -v /mnt/c/projects/distillery-docker/todos-app:/var/www/html my-php-todos
+```
 
 ## docker compose
 
+## docker network
 
 TODOS:
 - Agregar método appendTodo: Debe agregar un todo a la lista "todos" en redis
