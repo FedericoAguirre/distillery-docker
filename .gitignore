@@ -1,1 +1,1 @@
-redis/data/appendonly.aof
+*.aof
