@@ -10,3 +10,22 @@ $4
 test
 $9
 CONECTADO
+*2
+$6
+SELECT
+$1
+0
+*3
+$3
+set
+$4
+test
+$16
+hola desde Redis
+*3
+$3
+set
+$4
+test
+$16
+Enter the Matrix
