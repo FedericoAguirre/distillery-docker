@@ -4,7 +4,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - /mnt/c/projects/distillery-docker/todos-app:/var/www/html
+      - ${PWD}/todos-app:/var/www/html
     links:
       - redis
     depends_on:
@@ -15,4 +15,4 @@ services:
       - "6379:6379"
     build: ./redis/.
     volumes:
-      - /mnt/c/projects/distillery-docker/redis/data:/data
+      - ${PWD}/redis/data:/data
