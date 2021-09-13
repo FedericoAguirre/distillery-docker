@@ -107,6 +107,11 @@ docker run -d --name my-todos-running-app -p 8080:80 -v /mnt/c/projects/distille
 
 ## docker compose
 
+```bash
+docker compose -p my-todos-project up -d
+```
+
+
 ## docker network
 
 TODOS:
