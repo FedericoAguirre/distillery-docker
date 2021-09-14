@@ -7,29 +7,33 @@
     </header>
     <body>
         <!-- Primer paso -->
-
+        
         <h1>Hola Distillery!</h1>
 
         <!-- Volumen-->
-        <!--
+        
         <h1>TODOs list!</h1>
+        <form action="addTodo.php" method="post">
+            <label id="lblTodo" for="txtTodo">To do</label>
+            <input type="text" name="txtTodo" id="txtTodo" length="50">
+            <input type="submit" class="button" value="Agregar" >
+        </form>
         <table id="todos_table" class="table table-striped">
             <thead>
                 <tr class="table-primary">
-                    <th>TODO</th>
-                    <th><input type="text" name="txt_todo" id="txt_todo" length="50"></th>
-                    <th><input type="button" value="Agregar"></th>
+                    <th>HECHO</th>
+                    <th>TO DO</th>
                 </tr>
             </thead>
             <tbody id="todos_list">
                 <tr class="todo:td">
-                    <td class="check"><input type="checkbox" name="" id=""></td><td class="todo">Una tarea</td><td>&nbsp;</td>
+                    <td class="check"><input type="checkbox" name="" id=""></td><td class="todo">Una tarea</td>
                 </tr>
                 <tr class="todo:td">
-                    <td class="check"><input type="checkbox" name="" id=""></td><td class="todo">Una tarea</td><td>&nbsp;</td>
+                    <td class="check"><input type="checkbox" name="" id=""></td><td class="todo">Una tarea</td>
                 </tr>
             </tbody>
         </table>
-        -->
+        
     </body>
 </html>
