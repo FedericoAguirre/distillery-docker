@@ -11,9 +11,17 @@ try {
     }
 
     $todoList = $redis->lrange("todoList", 0, 10);
-    print_r($todoList);
+    $rows = "";
+    $id = 0;
+    foreach ($todoList as $todo) 
+    { 
+        $rows .= "<tr class=\"todo:td\"><td class=\"check\"><input type=\"checkbox\" name=\"todo_".$id."\" id=\"todo_".$id."\"></td><td class=\"todo\">".$todo."</td></tr>\n";
+        $id += 1;
+    } 
+    //print_r($todoList);
+    echo $rows;
 }
-catch(Exception  $exc){
-    echo "Excepción: ".$exc->getMessage();
+catch(Exception  $exc) {
+    echo "<tr><td>Excepción</td>"."<td>".$exc->getMessage()."</td></tr>";
 }
 ?>
