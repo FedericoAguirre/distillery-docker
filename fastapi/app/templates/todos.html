@@ -13,7 +13,7 @@
                     e.preventDefault();
                     $.ajax({
                         type: "POST",
-                        url: "/addTodo.php",
+                        url: "http://127.0.0.1:8080/addTodo.php",
                         data: { 
                             txtTodo: $("#txtTodo").val()
                         },
@@ -32,13 +32,8 @@
     <body>
         <main>
             <div class="container">
-                <!-- Primer paso -->
-        
-                <h1 id="titulo">Hola Distillery!</h1>
 
-                <!-- Volumen-->
-                <!--
-                <h1>Tareas from PHP</h1>
+                <h1>Tareas - FastApi</h1>
                 <div class="container"></div>
                     <form>
                         <div class="mb-3 row">
@@ -66,7 +61,7 @@
                         </tbody>
                     </table>
                 </div>
-                -->
+
             </div>
         </main>
     </body>

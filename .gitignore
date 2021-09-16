@@ -1,1 +1,3 @@
-redis/data
+*.aof
+.venv
+__pycache__
