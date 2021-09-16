@@ -1,0 +1,10 @@
+{% for todo in todo_list %}
+<tr class="todoRow">
+    <td class="check">
+        <input type="checkbox">
+    </td>
+    <td class="todo">
+        {{todo}}
+    </td>
+</tr>
+{% endfor %}
