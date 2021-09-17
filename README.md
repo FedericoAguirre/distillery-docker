@@ -18,6 +18,10 @@ Los contenedores y las máquinas virtuales tienen beneficios similares de asigna
 
 [Contenedores](https://www.docker.com/resources/what-container)
 
+## Image vs Container
+
+![Imagen vs Contenedor](img/imagen-vs-contenedor.png)
+
 ## Docker setup
 
 Descargar el programa en [Docker](https://www.docker.com/get-started)
@@ -54,8 +58,8 @@ COPY ./app /var/www/html/
 
 ## docker build
 
-- -f, --file string             Name of the Dockerfile (Default is 'PATH/Dockerfile')
 - -t, --tag list                Name and optionally a tag in the 'name:tag' format
+- -f, --file string             Name of the Dockerfile (Default is 'PATH/Dockerfile')
 
 ```bash
 docker build -t my-php ./php/.
@@ -107,7 +111,11 @@ docker exec -it my-php-todos /bin/bash
 ```bash
 docker run -d --name my-php-todos -p 8084:80 -v ${PWD}/php/app:/var/www/html my-php
 ```
+## Creando aplicaciones
 
+## Aplicación TODOS
+
+![Aplicación TODOS](img/app.png)
 ## docker compose
 
 ```bash
