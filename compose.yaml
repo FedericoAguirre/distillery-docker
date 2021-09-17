@@ -21,7 +21,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ${PWD}/php/app:/var/www/html/
+      - ${PWD}/php/app:/var/www/html
     links:
       - redis
     depends_on:

@@ -121,11 +121,3 @@ docker run -d --name my-php-todos -p 8084:80 -v ${PWD}/php/app:/var/www/html my-
 ```bash
 docker compose -p my-todos-app up -d
 ```
-
-
-## docker network
-
-TODOS:
-- Agregar método appendTodo: Debe agregar un todo a la lista "todos" en redis
-- Crear método para leer todos los registros en "todos" en redis
-- Unir métodos con la aplicación con javascript
