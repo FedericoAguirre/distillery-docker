@@ -6,6 +6,10 @@
 
 ![En mi máquina funciona](img/en-mi-computadora-si-funciona.png)
 
+## ¿Qué es Docker?
+
+Docker es una plataforma abierta para desarrollar , empaquetar y ejecutar applicaciones.
+
 ## ¿Qué es un contenedor?
 
 Un **contenedor** *es una unidad estándar de software* que empaqueta código y todas sus dependencias de tal forma que la aplicación corre rápida y confiablemente desde un ambiente computacional a otro.
