@@ -16,14 +16,13 @@ services:
       - redis
     depends_on:
       - redis
-  app:
-    build: .
+  php:
+    build: ./php/.
     ports:
       - "8080:80"
     volumes:
-      - ${PWD}/todos-app:/var/www/html
+      - ${PWD}/php/app:/var/www/html/
     links:
       - redis
     depends_on:
       - redis
-

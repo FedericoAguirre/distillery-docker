@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 class Config(BaseSettings):
     # The default URL expects the app to run using Docker and docker-compose.
     redis_url: str = 'redis://redis:6379'
+    #redis_url: str = 'redis://localhost:6379'
     
 class Todo(BaseModel):
     todo: str = None
@@ -34,6 +35,7 @@ async def read_item(todo: Todo, request: Request):
     todo_list = []
     response = ""
     if todo.todo != "first_todo" :
-        todo_list.append(todo.todo)
+        await redis.execute_command("LPUSH", "todoList", todo.todo)
+        todo_list = await redis.execute_command("LRANGE" , "todoList", "0", "10")
         response = templates.TemplateResponse("todo_rows.html", {"todo_list": todo_list, "request": request})
     return response
